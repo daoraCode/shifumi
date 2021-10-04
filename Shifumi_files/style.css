@@ -39,11 +39,3 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
-
-button {
-  background-color: rgb(242, 35, 114);;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 25px;
-  border: 2px solid rgb(242, 35, 114);;
-}
