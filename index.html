@@ -8,19 +8,21 @@
     <title>Shifumi</title>
 </head>
 <body>
+
     <h1>Shifumi, C'est moi qui gagnera !</h1>
-    
-        <section class="container hero-ia">
+
+        <div id="containerIA" class:="ctn hero-ia">
             <img id="imgIA" src="" alt="">
             <img src="./humanoide.png" alt="">
-        </section>
+        </div>
 
-        <section class="container hero-severin">
-            <img id="img" src="" alt="">
-            <button onclick="stone()">PIERRE</button>
-            <button onclick="paper()">FEUILLE</button>
-            <button onclick="scissors()">CISEAUX</button>
-        </section> 
+        <div id="containerPlayer" class="ctn hero-severin">
+            <img id="img" alt="CHOISIR">
+            <button onclick="player('stone')">PIERRE</button>
+            <button onclick="player('paper')">FEUILLE</button>
+            <button onclick="player('scissors')">CISEAUX</button>
+        </div>
+        
     </div>
     <script src="./index.js"></script>
 </body>

@@ -8,7 +8,9 @@ body {
 }
 
 img {
-  height: 290px;
+  padding: 30px 0 0 60px;
+  height: 205px;
+  width: 205px;
 }
 
 h1 {
@@ -17,10 +19,12 @@ h1 {
   margin: 50px;
 }
 
-.container {
-  background-color: rgb(238, 237, 231);
+div {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(109, 61, 222);
   margin-bottom: 50px;
-  height: 27vh;
+  height: 30vh;
 }
 
 .hero-ia {
@@ -29,21 +33,22 @@ h1 {
 }
 
 .hero-ia img {
-  margin-top: 20px;
-  width: 190px;
-  height: 190px;
+  width: 150px;
+  height: 150px;
 }
 
 .hero-severin {
+  height: 30vh;
   background-color: rgb(242, 35, 114);
   display: flex;
   justify-content: space-between;
 }
 
 button {
+  color: beige  ;
   background-color: rgb(242, 35, 114);;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 25px;
+  font-size: 40px;
+  font-weight: 100;
+  margin: 0 50px 5px 20px;
   border: 2px solid rgb(242, 35, 114);;
 }
