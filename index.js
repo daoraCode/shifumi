@@ -1,17 +1,19 @@
 console.log('Hello Shifumi');
 
+// je récupère la div depuis le DOM (html)
 var containerIA = document.getElementById('containerIA');
 document.body.appendChild(containerIA);
 var imgIA = document.getElementById('imgIA');
 imgIA.setAttribute('src', 'stone.png');
 
+// je récupère la div depuis le DOM (html)
 var containerPlayer = document.getElementById('containerPlayer');
 document.body.appendChild(containerPlayer);
 var imgPlayer = document.getElementById('img');
 imgPlayer.setAttribute('src', 'stone.png');
 // Game start with stone by default
 
-function choiceIA() {
+function choiceIARandom() {
   var array = ['stone', 'paper', 'scissors'];
   var random = Math.floor(Math.random() * 3);
   if (array[random] === 'stone') {
@@ -25,8 +27,33 @@ function choiceIA() {
   return arrayChoiceIA;
 }
 
-function player(myChoice) {
-  switch (myChoice) {
+// fonction prends 2 paramètres afin de comparer deux valeurs
+function versusShifumi(myChoice, iAChoice) {
+
+  if (myChoice === 'stone' && iAChoice === 'paper') {
+    console.log("VOUS AVEZ PERDU, L'IA À GAGNÉ!");
+  } else if(myChoice === 'stone' && iAChoice === 'scissors') {
+    console.log('VOUS AVEZ GAGNÉ!');
+  } else if(myChoice === 'stone' && iAChoice === 'stone') {
+    console.log('DRAW!');
+  } else if(myChoice === 'paper' && iAChoice === 'scissors') {
+    console.log("VOUS AVEZ PERDU, L'IA À GAGNÉ!");
+  } else if(myChoice === 'paper' && iAChoice === 'stone') {
+    console.log('VOUS AVEZ GAGNÉ!');   
+  } else if(myChoice === 'paper' && iAChoice === 'paper') {
+    console.log("DRAW!"); 
+  } else if(myChoice === 'scissors' && iAChoice === 'stone') {
+    console.log("VOUS AVEZ PERDU, L'IA À GAGNÉ!");
+  } else if(myChoice === 'scissors' && iAChoice === 'paper') {
+    console.log('VOUS AVEZ GAGNÉ!'); 
+  } else if(myChoice === 'scissors' && iAChoice === 'scissors') {
+    console.log('DRAW');
+  }
+
+}
+
+function player(playerChoice) {
+  switch (playerChoice) {
     case 'stone':
       imgPlayer.setAttribute('src', './stone.png');
       break;
@@ -39,34 +66,7 @@ function player(myChoice) {
     default:
       console.log('DRAW');
   }
-
-  var lastChoiceIA = choiceIA();
-
-  if (lastChoiceIA === 'stone' && myChoice === 'scissors') {
-    console.log("VOUS AVEZ PERDU, L'IA À GAGNÉ!");
-  } else if(myChoice === 'stone' && lastChoiceIA === 'scissors') {
-    console.log('VOUS AVEZ GAGNÉ!');
-  } else if(lastChoiceIA === 'scissors' && myChoice === 'paper') {
-    console.log("VOUS AVEZ PERDU, L'IA À GAGNÉ!");
-  } else if(myChoice === 'scissors' && lastChoiceIA === 'paper') {
-    console.log('VOUS AVEZ GAGNÉ!');   
-  } else if(lastChoiceIA === 'paper' && myChoice === 'stone') {
-    console.log("VOUS AVEZ PERDU, L'IA À GAGNÉ!"); 
-  } else if(myChoice === 'paper' && lastChoiceIA === 'stone') {
-    console.log('VOUS AVEZ GAGNÉ!'); 
-  } else if(myChoice === 'stone' && lastChoiceIA === 'stone') {
-    console.log('DRAW');
-  } else if(myChoice === 'scissors' && lastChoiceIA === 'scissors') {
-    console.log('DRAW');
-  } else if(myChoice === 'paper' && lastChoiceIA === 'paper') {
-    console.log('DRAW');
-  }
-
-  // if(myChoice === 5) {
-    
-  // }
-
-  // if(lastChoiceIA === 5) {
-
-  // }
+  var choiceIA = choiceIARandom();
+  versusShifumi(playerChoice, choiceIA);
 }
+
