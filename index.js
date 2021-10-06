@@ -11,7 +11,7 @@ var containerPlayer = document.getElementById('containerPlayer');
 document.body.appendChild(containerPlayer);
 var imgPlayer = document.getElementById('img');
 imgPlayer.setAttribute('src', 'stone.png');
-// Game start with stone by default
+
 
 function choiceIARandom() {
   var array = ['stone', 'paper', 'scissors'];
@@ -29,11 +29,31 @@ function choiceIARandom() {
 
 // fonction prends 2 paramètres afin de comparer deux valeurs
 function versusShifumi(myChoice, iAChoice) {
-
   if (myChoice === 'stone' && iAChoice === 'paper') {
     console.log("VOUS AVEZ PERDU, L'IA À GAGNÉ!");
   } else if(myChoice === 'stone' && iAChoice === 'scissors') {
-    console.log('VOUS AVEZ GAGNÉ!');
+    var containerMsg = document.getElementById('containerResult');
+    containerMsg.appendChild();
+
+    // index.js🤚🏼
+
+// Ici, la méthode createElement nous permet de créer un <p></p>
+// Il n'est pas encore inséré dans notre DOM
+var newParagraph = document.createElement("p");
+
+// createTextNode nous permet de créer le texte qu'on va insèrer
+// dans notre newParagraph
+var title = document.createTextNode("Vous avez gagné, ✊🏼 > ✌🏼 ");
+
+// appendChild nous permet d'insérer text dans newParagraph
+title.appendChild(text);
+
+// on récupere la div dans laquelle on veut insérer newParagraph
+var element = document.getElementById("containerResult");
+
+// on insère newParagrapj dans element
+element.appendChild(newParagraph);
+
   } else if(myChoice === 'stone' && iAChoice === 'stone') {
     console.log('DRAW!');
   } else if(myChoice === 'paper' && iAChoice === 'scissors') {
@@ -41,7 +61,7 @@ function versusShifumi(myChoice, iAChoice) {
   } else if(myChoice === 'paper' && iAChoice === 'stone') {
     console.log('VOUS AVEZ GAGNÉ!');   
   } else if(myChoice === 'paper' && iAChoice === 'paper') {
-    console.log("DRAW!"); 
+    console.log("DRAW!");
   } else if(myChoice === 'scissors' && iAChoice === 'stone') {
     console.log("VOUS AVEZ PERDU, L'IA À GAGNÉ!");
   } else if(myChoice === 'scissors' && iAChoice === 'paper') {
@@ -49,7 +69,6 @@ function versusShifumi(myChoice, iAChoice) {
   } else if(myChoice === 'scissors' && iAChoice === 'scissors') {
     console.log('DRAW');
   }
-
 }
 
 function player(playerChoice) {
